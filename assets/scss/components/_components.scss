@@ -1,0 +1,60 @@
+// --------buttons--------
+.btn-square {
+    padding: 12px;
+    line-height: 1;
+}
+
+.btn-tags {
+    border: 1px solid $black-2;
+    border-radius: 96px;
+    padding: 12px;
+    font-size: 12px;
+    display: inline-flex;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    line-height: 1.2;
+    background-color: $white-3;
+    @include zoom(0.2s);
+
+    &:hover {
+        background-color: $secondary !important;
+        color: $white !important;
+    }
+}
+
+.btn-social {
+    background-color: $gold-3;
+    color: $white;
+    @include zoom(0.2s);
+
+    &:hover {
+        background-color: $primary;
+    }
+}
+
+// -----border-----
+.border-cos {
+    border-radius: 16px 16px 16px 0;
+}
+
+// -----other-----
+.comment {
+    background-color: $secondary;
+    color: $white;
+    width: 100%;
+    top: 0;
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    @include lg() {
+        height: 100%;
+        width: auto;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}
