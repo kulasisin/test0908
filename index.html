@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>觀哉 GuanZai</title>
+    <link
+      rel="stylesheet"
+      href="/dist/assets/styles/core.css?ver=1.4.3"
+      media="screen"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script type="module" crossorigin src="/GuanZai/assets/main-7b04b226.js"></script>
+    <link rel="stylesheet" href="/GuanZai/assets/main-e5b881bc.css">
+  </head>
+  <body>
+    <header
+  class="bg-white bg-opacity-75 border-bottom border-1 border-black-2 fixed-top"
+>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white-2 py-0">
+    <div
+      class="container-fluid px-12 px-lg-64 py-16 py-lg-24 d-flex justify-content-between"
+    >
+      <!-- --------search-button-------- -->
+      <button
+        class="navbar-toggler border-0 p-0"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#search"
+      >
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIySURBVHgB7ZdPbtNAFMa/caia8EedSEBrsajZQMIqNyA3ID0BZscyN4CeAG6QdMUy6Y4d4QQNK0AscFcUgVovqqobz/TzxI3aSk5iT1I1lX/SZDSeN+Nv3kzmPQMFBQXLjUBGpPQkKhUfSr1k0xvNIkJo/Y11Pzz4McAcmVmg3Kh5rDoU0aC4HdZDlJyh6YyUNM+hfWis8ck2hXZxXcjHz1rSrR9R5HvjwUm2br1Fu99yvf4B1yYufuGTF42Zx3gNSaE9jutgkcTbmlXceOxI5J5cf97GoqC4brytyMl4gVOOhdXksIRe/GizSCe1R4gWfwewRes+f18jJ+kCoZpQYheWmHtRCJl3mycIdDbh6BDzIcDKioccpAvUumomngeaCy2V5uxBoYfc4szXSwpPkXOxd9K7nABCebDEhEit18K/PwPkYNIW93m4X8GeZpxEYBGYS3aj1oQFtnM4U/rfsHTyXhEU9o7VwCYFmygwucN2sbqaOegn4nyWbVgwzYMI/3xvw3H2GfT3kpxwujjXpFq+aUSRVRwuzWJ0evz/c/nBI5fe7JTvP6yVK9X905PDg0uieAzKVfct+z+xWWHZYkLLSCR6tP961X5WMqX8iQd9jmKcFpvMrIPRLEKaonUcGrsXz5xJ1SLVoye3wn+/hshI5m+S8YvjP869u55pRCqkqCDVNhap9BcuoE27HdxEYpHJZ0PuzGbhLI/I0eV9g0WefwoUIi1ZJpEDFBQU3FLOAI1dsWetmIbcAAAAAElFTkSuQmCC"
+          alt="berger"
+          class="align-self-center"
+        />
+      </button>
+      <!-- --------search-modal-------- -->
+      <div
+        class="modal"
+        id="search"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-12">
+              <div class="mb-64"><!-- -----search----- -->
+<div class="search position-relative">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIySURBVHgB7ZdPbtNAFMa/caia8EedSEBrsajZQMIqNyA3ID0BZscyN4CeAG6QdMUy6Y4d4QQNK0AscFcUgVovqqobz/TzxI3aSk5iT1I1lX/SZDSeN+Nv3kzmPQMFBQXLjUBGpPQkKhUfSr1k0xvNIkJo/Y11Pzz4McAcmVmg3Kh5rDoU0aC4HdZDlJyh6YyUNM+hfWis8ck2hXZxXcjHz1rSrR9R5HvjwUm2br1Fu99yvf4B1yYufuGTF42Zx3gNSaE9jutgkcTbmlXceOxI5J5cf97GoqC4brytyMl4gVOOhdXksIRe/GizSCe1R4gWfwewRes+f18jJ+kCoZpQYheWmHtRCJl3mycIdDbh6BDzIcDKioccpAvUumomngeaCy2V5uxBoYfc4szXSwpPkXOxd9K7nABCebDEhEit18K/PwPkYNIW93m4X8GeZpxEYBGYS3aj1oQFtnM4U/rfsHTyXhEU9o7VwCYFmygwucN2sbqaOegn4nyWbVgwzYMI/3xvw3H2GfT3kpxwujjXpFq+aUSRVRwuzWJ0evz/c/nBI5fe7JTvP6yVK9X905PDg0uieAzKVfct+z+xWWHZYkLLSCR6tP961X5WMqX8iQd9jmKcFpvMrIPRLEKaonUcGrsXz5xJ1SLVoye3wn+/hshI5m+S8YvjP869u55pRCqkqCDVNhap9BcuoE27HdxEYpHJZ0PuzGbhLI/I0eV9g0WefwoUIi1ZJpEDFBQU3FLOAI1dsWetmIbcAAAAAElFTkSuQmCC"
+    alt="search"
+    class="position-absolute translate-middle-y top-50 start-24"
+  />
+  <input
+    type="text"
+    name="search"
+    id="search"
+    placeholder="搜尋劇名/演員/類別"
+    aria-label="search"
+    aria-describedby="search"
+    class="form-control ps-64 pe-24"
+  />
+</div>
+</div>
+              <span class="text-black-5 text-opacity-50 fs-12">熱門標籤</span>
+              <ul class="list-unstyled">
+                <li><a href="#" class="btn-tags">瑯琊榜</a></li>
+                <li><a href="#" class="btn-tags">#宮鬥</a></li>
+                <li><a href="#" class="btn-tags">虐戀</a></li>
+                <li><a href="#" class="btn-tags">長歌行</a></li>
+                <li><a href="#" class="btn-tags">陳情令</a></li>
+                <li><a href="#" class="btn-tags">羅雲熙</a></li>
+                <li><a href="#" class="btn-tags">飛流</a></li>
+                <li><a href="#" class="btn-tags">長月燼明</a></li>
+                <li><a href="#" class="btn-tags">胡歌</a></li>
+                <li><a href="#" class="btn-tags">吳磊</a></li>
+                <li><a href="#" class="btn-tags">星漢燦爛</a></li>
+                <li><a href="#" class="btn-tags">後宮甄嬛傳</a></li>
+                <li><a href="#" class="btn-tags">#愛情</a></li>
+                <li><a href="#" class="btn-tags">白鹿</a></li>
+                <li><a href="#" class="btn-tags">#權謀</a></li>
+                <li><a href="#" class="btn-tags">王凱</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- --------burger-------- -->
+      <button
+        class="navbar-toggler border-0 burger p-0"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbar"
+        aria-controls="navbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAuSURBVHgB7dQxEQAgDASwBwWMSEAm0quidx0SEUkAAGi0zn0/g+0AtPIgAACjFdfNAad6F2tTAAAAAElFTkSuQmCC" alt="burger" />
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEESURBVHgB7ZexCsIwEIbPFqVjFqHgLIhTX6VP2ldxcnFwEgRBOokoFb0iRUipSfMnAb1vKqXcfSTk/oZIEAThv0m/faAW6yLLVH69nI8ExLRuQiakaaXmy4JAsBw1j4pmU4LABVW+2iMku1osiQQh6U1OazBC0ruc1shCMpic1tBAMric1nhAMpqcJtAjGV1OE/mQRMpNCEA3eJumbIcvP6dJWR+2G3IEIsh0kgxIjjGLOltud0KB3eLXyrUv3ttdn3aQVXSi70Ags9uJodMaXdJklESTtJlzwSXHDOFgki4J4V0SEV/eJJHZCpf08VdiI2l4q8NlK9PW4tRB3eoEQRB+mCdI6IDxTNvp9gAAAABJRU5ErkJggg==" alt="close" class="d-none" />
+      </button>
+      <!-- --------collapse-------- -->
+      <div class="collapse navbar-collapse px-16 px-lg-0" id="navbar">
+        <!-- -----list----- -->
+        <ul class="navbar-nav pt-56 pt-lg-0 mb-48 mb-lg-0">
+          <li class="nav-item pe-lg-40 py-8 py-lg-0">
+            <a href="#" class="nav-link">所有作品</a>
+          </li>
+          <li class="nav-item px-lg-40 py-8 py-lg-0 position-relative">
+            <a href="#" class="nav-link">熱門排行</a>
+          </li>
+          <li class="nav-item ps-lg-40 pe-lg-48 py-8 py-lg-0">
+            <a href="#" class="nav-link">平台推薦</a>
+          </li>
+        </ul>
+        <!-- --------search-------- -->
+        <div class="d-none d-lg-block"><!-- -----search----- -->
+<div class="search position-relative">
+  <img
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIySURBVHgB7ZdPbtNAFMa/caia8EedSEBrsajZQMIqNyA3ID0BZscyN4CeAG6QdMUy6Y4d4QQNK0AscFcUgVovqqobz/TzxI3aSk5iT1I1lX/SZDSeN+Nv3kzmPQMFBQXLjUBGpPQkKhUfSr1k0xvNIkJo/Y11Pzz4McAcmVmg3Kh5rDoU0aC4HdZDlJyh6YyUNM+hfWis8ck2hXZxXcjHz1rSrR9R5HvjwUm2br1Fu99yvf4B1yYufuGTF42Zx3gNSaE9jutgkcTbmlXceOxI5J5cf97GoqC4brytyMl4gVOOhdXksIRe/GizSCe1R4gWfwewRes+f18jJ+kCoZpQYheWmHtRCJl3mycIdDbh6BDzIcDKioccpAvUumomngeaCy2V5uxBoYfc4szXSwpPkXOxd9K7nABCebDEhEit18K/PwPkYNIW93m4X8GeZpxEYBGYS3aj1oQFtnM4U/rfsHTyXhEU9o7VwCYFmygwucN2sbqaOegn4nyWbVgwzYMI/3xvw3H2GfT3kpxwujjXpFq+aUSRVRwuzWJ0evz/c/nBI5fe7JTvP6yVK9X905PDg0uieAzKVfct+z+xWWHZYkLLSCR6tP961X5WMqX8iQd9jmKcFpvMrIPRLEKaonUcGrsXz5xJ1SLVoye3wn+/hshI5m+S8YvjP869u55pRCqkqCDVNhap9BcuoE27HdxEYpHJZ0PuzGbhLI/I0eV9g0WefwoUIi1ZJpEDFBQU3FLOAI1dsWetmIbcAAAAAElFTkSuQmCC"
+    alt="search"
+    class="position-absolute translate-middle-y top-50 start-24"
+  />
+  <input
+    type="text"
+    name="search"
+    id="search"
+    placeholder="搜尋劇名/演員/類別"
+    aria-label="search"
+    aria-describedby="search"
+    class="form-control ps-64 pe-24"
+  />
+</div>
+</div>
+        <!-- -----button----- -->
+        <ul
+          class="list-unstyled mb-0 d-flex flex-column flex-lg-row justify-content-lg-end flex-grow-1"
+        >
+          <li class="nav-item me-0 me-lg-16 mb-16 mb-lg-0">
+            <button type="button" class="btn btn-outline-secondary w-100">
+              登入
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-secondary w-100">
+              立即註冊
+            </button>
+          </li>
+        </ul>
+        <!-- -----copyright----- -->
+        <div class="text-center d-block d-lg-none pb-16 mt-295">
+          <span class="english fs-13">
+            Copyright©2023 GuanZai All Rights Reserved
+          </span>
+          <br />
+          <span class="fs-12"> 此網站為個人切版作品，非商業使用 </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    <!-- -----banner----- -->
+    <div class="container pt-112 pt-lg-168">
+      <!-- -----logo & pagination----- -->
+      <div class="d-flex justify-content-between mb-48 mb-lg-80">
+        <img
+          src="/GuanZai/assets/logo-7c550b44.png"
+          alt="觀哉GuanZai"
+          class="logo mx-auto ms-lg-0 me-lg-auto"
+        />
+        <ul class="page d-none d-lg-block">
+          <li class="d-inline-block me-24">
+            <button
+              type="button"
+              class="page-pre btn btn-square btn-outline-secondary fs-24"
+            >
+              <i class="bi bi-arrow-left"></i>
+            </button>
+          </li>
+          <li class="d-inline-block">
+            <button
+              type="button"
+              class="page-next btn btn-square btn-outline-secondary fs-24"
+            >
+              <i class="bi bi-arrow-right"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- -----banner-comment----- -->
+      <div class="swiper banner-comment">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!-- -----marquee1----- -->
+            <div
+              class="position-relative border border-cos border-opacity-70 mb-24 pt-48 pt-lg-0"
+            >
+              <div class="comment border-cos position-absolute">
+                <i class="bi bi-star-fill text-primary me-4"></i>
+                <span
+                  class="english fs-15 fw-bold border-end border-white-3 pe-8 me-8"
+                >
+                  4.9 </span
+                >網友評論
+              </div>
+              <div class="swiper marquee">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- -----marquee2----- -->
+            <div
+              class="position-relative border border-cos border-opacity-70 mb-24 pt-48 pt-lg-0"
+            >
+              <div class="comment border-cos position-absolute">
+                <i class="bi bi-star-fill text-primary me-4"></i>
+                <span
+                  class="english fs-15 fw-bold border-end border-white-3 pe-8 me-8"
+                >
+                  4.9 </span
+                >網友評論
+              </div>
+              <div class="swiper marquee">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- -----marquee3----- -->
+            <div
+              class="position-relative border border-cos border-opacity-70 mb-24 pt-48 pt-lg-0"
+            >
+              <div class="comment border-cos position-absolute">
+                <i class="bi bi-star-fill text-primary me-4"></i>
+                <span
+                  class="english fs-15 fw-bold border-end border-white-3 pe-8 me-8"
+                >
+                  4.9 </span
+                >網友評論
+              </div>
+              <div class="swiper marquee">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- -----marquee4----- -->
+            <div
+              class="position-relative border border-cos border-opacity-70 mb-24 pt-48 pt-lg-0"
+            >
+              <div class="comment border-cos position-absolute">
+                <i class="bi bi-star-fill text-primary me-4"></i>
+                <span
+                  class="english fs-15 fw-bold border-end border-white-3 pe-8 me-8"
+                >
+                  4.9 </span
+                >網友評論
+              </div>
+              <div class="swiper marquee">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- -----marquee5----- -->
+            <div
+              class="position-relative border border-cos border-opacity-70 mb-24 pt-48 pt-lg-0"
+            >
+              <div class="comment border-cos position-absolute">
+                <i class="bi bi-star-fill text-primary me-4"></i>
+                <span
+                  class="english fs-15 fw-bold border-end border-white-3 pe-8 me-8"
+                >
+                  4.9 </span
+                >網友評論
+              </div>
+              <div class="swiper marquee">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- -----marquee6----- -->
+            <div
+              class="position-relative border border-cos border-opacity-70 mb-24 pt-48 pt-lg-0"
+            >
+              <div class="comment border-cos position-absolute">
+                <i class="bi bi-star-fill text-primary me-4"></i>
+                <span
+                  class="english fs-15 fw-bold border-end border-white-3 pe-8 me-8"
+                >
+                  4.9 </span
+                >網友評論
+              </div>
+              <div class="swiper marquee">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- -----marquee7----- -->
+            <div
+              class="position-relative border border-cos border-opacity-70 mb-24 pt-48 pt-lg-0"
+            >
+              <div class="comment border-cos position-absolute">
+                <i class="bi bi-star-fill text-primary me-4"></i>
+                <span
+                  class="english fs-15 fw-bold border-end border-white-3 pe-8 me-8"
+                >
+                  4.9 </span
+                >網友評論
+              </div>
+              <div class="swiper marquee">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                  <div class="swiper-slide">
+                    <span class="me-48">
+                      【犀嘻嘻】人物性格鮮明，劇情緊湊富張力，不拖也不灑狗血，值得一刷再刷，我已經刷12遍了!!!
+                    </span>
+                    <span>
+                      【雨葭】被朋友推坑，原本根本不看古裝劇，但這部真的太頂了=
+                      =，雖然是2015年的劇，最近剛補也不影響，劇情緊湊環環相扣，看梅長蘇一部部達成所願，但這結果....唉我好希望他能再和景琰待一會.....
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -----banner-swiper----- -->
+    <div class="banner-box">
+      <div class="swiper banner">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/GuanZai/assets/后宮甄嬛傳-355b162e.png" alt="后宮甄嬛傳" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/GuanZai/assets/長風渡-ca0e74de.png" alt="長風渡" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/GuanZai/assets/長月燼明2-e897e904.png" alt="長月燼明" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/GuanZai/assets/后宮甄嬛傳2-555a4ac2.png" alt="后宮甄嬛傳" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/GuanZai/assets/長月燼明-a1318d93.png" alt="長月燼明" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/GuanZai/assets/星漢燦爛-96dba728.png" alt="星漢燦爛" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/GuanZai/assets/瑯琊榜-a3d8d3f1.png" alt="瑯琊榜" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/GuanZai/assets/星漢燦爛-96dba728.png" alt="星漢燦爛" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/GuanZai/assets/瑯琊榜-a3d8d3f1.png" alt="瑯琊榜" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- -----about----- -->
+    <div class="container pt-80 pt-lg-160 about">
+      <div class="row gx-12">
+        <div class="col-12 col-lg-4 text-center text-lg-start">
+          <h2 class="mb-48">
+            <p class="fw-bold fs-26 mb-8">關於我們</p>
+            <p class="english fs-13 mb-0">Guan Yú Wǒ Mẹn</p>
+          </h2>
+          <h3 class="fw-bold fs-56">
+            穿越時空，<br />探尋<span class="text-primary"
+              >最完整的<br />古裝劇資訊</span
+            >
+          </h3>
+        </div>
+        <ul class="col-12 col-lg-8 row list-unstyled gx-32">
+          <li class="col-6 mb-64">
+            <div class="img-box mb-24">
+              <img
+                src="/GuanZai/assets/information-2804fd7e.png"
+                alt="完整古裝劇資訊"
+              />
+            </div>
+            <div class="px-24">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="57"
+                height="56"
+                viewBox="0 0 57 56"
+                fill="none"
+              >
+                <path
+                  d="M9.83317 49C8.54984 49 7.45084 48.5427 6.53617 47.628C5.62151 46.7133 5.16495 45.6151 5.16651 44.3333V11.6667C5.16651 10.3833 5.62384 9.28434 6.53851 8.36967C7.45317 7.455 8.5514 6.99845 9.83317 7H47.1665C48.4498 7 49.5488 7.45734 50.4635 8.372C51.3782 9.28667 51.8347 10.3849 51.8332 11.6667V44.3333C51.8332 45.6167 51.3758 46.7157 50.4612 47.6303C49.5465 48.545 48.4483 49.0016 47.1665 49H9.83317ZM9.83317 44.3333H14.4998V39.6667H9.83317V44.3333ZM42.4998 44.3333H47.1665V39.6667H42.4998V44.3333ZM26.1665 39.6667H30.8332V25.6667H26.1665V39.6667ZM9.83317 35H14.4998V30.3333H9.83317V35ZM42.4998 35H47.1665V30.3333H42.4998V35ZM9.83317 25.6667H14.4998V21H9.83317V25.6667ZM42.4998 25.6667H47.1665V21H42.4998V25.6667ZM28.4998 21C29.161 21 29.7155 20.776 30.1635 20.328C30.6115 19.88 30.8347 19.3262 30.8332 18.6667C30.8332 18.0056 30.6092 17.451 30.1612 17.003C29.7132 16.555 29.1594 16.3318 28.4998 16.3333C27.8387 16.3333 27.2842 16.5573 26.8362 17.0053C26.3882 17.4533 26.165 18.0071 26.1665 18.6667C26.1665 19.3278 26.3905 19.8823 26.8385 20.3303C27.2865 20.7783 27.8403 21.0016 28.4998 21ZM9.83317 16.3333H14.4998V11.6667H9.83317V16.3333ZM42.4998 16.3333H47.1665V11.6667H42.4998V16.3333ZM19.1665 44.3333H37.8332V11.6667H19.1665V44.3333Z"
+                  fill="#806D38"
+                  fill-opacity="0.5"
+                />
+              </svg>
+              <h4 class="fw-bold fs-26 my-16">完整古裝劇資訊</h4>
+              <p class="fs-15">
+                蒐集最完整的古裝劇資訊，劇情、演員、上架平台等讓你一目了然，即時了解最新趨勢！
+              </p>
+            </div>
+          </li>
+          <li class="col-6 mb-64">
+            <div class="img-box mb-24">
+              <img src="/GuanZai/assets/search-9d4616c3.png" alt="多元搜尋功能" />
+            </div>
+            <div class="px-24">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="57"
+                height="56"
+                viewBox="0 0 57 56"
+                fill="none"
+              >
+                <path
+                  d="M45.5332 34.7667C46.4665 33.1333 47.1665 31.2667 47.1665 29.1667C47.1665 23.3333 42.4998 18.6667 36.6665 18.6667C30.8332 18.6667 26.1665 23.3333 26.1665 29.1667C26.1665 35 30.8332 39.6667 36.6665 39.6667C38.7665 39.6667 40.6332 38.9667 42.2665 38.0333L49.0332 44.8L52.2998 41.5333L45.5332 34.7667ZM36.6665 35C33.3998 35 30.8332 32.4333 30.8332 29.1667C30.8332 25.9 33.3998 23.3333 36.6665 23.3333C39.9332 23.3333 42.4998 25.9 42.4998 29.1667C42.4998 32.4333 39.9332 35 36.6665 35ZM34.7998 44.1C33.8665 45.0333 32.9332 45.7333 31.9998 46.6667L28.4998 49.7L24.9998 46.6667C13.0998 35.9333 5.1665 28.7 5.1665 19.8333C5.1665 12.6 10.7665 7 17.9998 7C21.9665 7 25.9332 8.86667 28.4998 11.9C31.0665 8.86667 35.0332 7 38.9998 7C46.2332 7 51.8332 12.6 51.8332 19.8333C51.8332 21.4667 51.5998 22.8667 51.1332 24.5C49.0332 18.4333 43.4332 14 36.6665 14C28.2665 14 21.4998 20.7667 21.4998 29.1667C21.4998 36.8667 27.3332 43.1667 34.7998 44.1Z"
+                  fill="#806D38"
+                  fill-opacity="0.5"
+                />
+              </svg>
+              <h4 class="fw-bold fs-26 my-16">多元搜尋功能</h4>
+              <p class="fs-15">
+                可透過關鍵字，或是篩選條件來設定你想搜尋的古裝劇，輕鬆找到你偏愛的那一劇！
+              </p>
+            </div>
+          </li>
+          <li class="col-6">
+            <div class="img-box mb-24">
+              <img src="/GuanZai/assets/list-f29f348d.png" alt="專屬古裝劇清單" />
+            </div>
+            <div class="px-24">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="57"
+                height="56"
+                viewBox="0 0 57 56"
+                fill="none"
+              >
+                <path
+                  d="M12.1667 49C10.8833 49 9.78434 48.5427 8.86967 47.628C7.955 46.7133 7.49845 45.6151 7.5 44.3333V11.6667C7.5 10.3833 7.95734 9.28433 8.872 8.36967C9.78667 7.455 10.8849 6.99844 12.1667 7H44.8333C46.1167 7 47.2157 7.45733 48.1303 8.372C49.045 9.28667 49.5016 10.3849 49.5 11.6667V32.2583C48.8 31.8306 48.0611 31.4806 47.2833 31.2083C46.5056 30.9361 45.6889 30.7222 44.8333 30.5667V11.6667H12.1667V44.3333H28.5C28.5 45.15 28.5583 45.9472 28.675 46.725C28.7917 47.5028 28.9861 48.2611 29.2583 49H12.1667ZM40.1667 53.6667V46.6667H33.1667V42H40.1667V35H44.8333V42H51.8333V46.6667H44.8333V53.6667H40.1667ZM19.1667 39.6667C19.8278 39.6667 20.3823 39.4427 20.8303 38.9947C21.2783 38.5467 21.5016 37.9929 21.5 37.3333C21.5 36.6722 21.276 36.1177 20.828 35.6697C20.38 35.2217 19.8262 34.9984 19.1667 35C18.5056 35 17.951 35.224 17.503 35.672C17.055 36.12 16.8318 36.6738 16.8333 37.3333C16.8333 37.9944 17.0573 38.549 17.5053 38.997C17.9533 39.445 18.5071 39.6682 19.1667 39.6667ZM19.1667 30.3333C19.8278 30.3333 20.3823 30.1093 20.8303 29.6613C21.2783 29.2133 21.5016 28.6596 21.5 28C21.5 27.3389 21.276 26.7843 20.828 26.3363C20.38 25.8883 19.8262 25.6651 19.1667 25.6667C18.5056 25.6667 17.951 25.8907 17.503 26.3387C17.055 26.7867 16.8318 27.3404 16.8333 28C16.8333 28.6611 17.0573 29.2157 17.5053 29.6637C17.9533 30.1117 18.5071 30.3349 19.1667 30.3333ZM19.1667 21C19.8278 21 20.3823 20.776 20.8303 20.328C21.2783 19.88 21.5016 19.3262 21.5 18.6667C21.5 18.0056 21.276 17.451 20.828 17.003C20.38 16.555 19.8262 16.3318 19.1667 16.3333C18.5056 16.3333 17.951 16.5573 17.503 17.0053C17.055 17.4533 16.8318 18.0071 16.8333 18.6667C16.8333 19.3278 17.0573 19.8823 17.5053 20.3303C17.9533 20.7783 18.5071 21.0016 19.1667 21ZM26.1667 30.3333H40.1667V25.6667H26.1667V30.3333ZM26.1667 21H40.1667V16.3333H26.1667V21ZM26.1667 39.6667H29.3167C29.6278 38.7722 30.0167 37.9361 30.4833 37.1583C30.95 36.3806 31.4945 35.6611 32.1167 35H26.1667V39.6667Z"
+                  fill="#806D38"
+                  fill-opacity="0.5"
+                />
+              </svg>
+              <h4 class="fw-bold fs-26 my-16">專屬古裝劇清單</h4>
+              <p class="fs-15">
+                收藏自己喜歡的古裝劇吧！登入會員隨時將自己有興趣的古裝劇收入囊中，不必重新搜尋。
+              </p>
+            </div>
+          </li>
+          <li class="col-6">
+            <div class="img-box mb-24">
+              <img src="/GuanZai/assets/share-7765a342.png" alt="評論分享互動" />
+            </div>
+            <div class="px-24">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="57"
+                height="56"
+                viewBox="0 0 57 56"
+                fill="none"
+              >
+                <path
+                  d="M15.5615 44.3333L5.1665 52.5V9.33333C5.1665 8.71449 5.41234 8.121 5.84992 7.68342C6.28751 7.24583 6.881 7 7.49984 7H49.4998C50.1187 7 50.7122 7.24583 51.1498 7.68342C51.5873 8.121 51.8332 8.71449 51.8332 9.33333V42C51.8332 42.6188 51.5873 43.2123 51.1498 43.6499C50.7122 44.0875 50.1187 44.3333 49.4998 44.3333H15.5615ZM13.9468 39.6667H47.1665V11.6667H9.83317V42.8983L13.9468 39.6667ZM16.8332 23.3333H21.4998C21.4998 25.1898 22.2373 26.9703 23.5501 28.2831C24.8628 29.5958 26.6433 30.3333 28.4998 30.3333C30.3564 30.3333 32.1368 29.5958 33.4496 28.2831C34.7623 26.9703 35.4998 25.1898 35.4998 23.3333H40.1665C40.1665 26.4275 38.9373 29.395 36.7494 31.5829C34.5615 33.7708 31.594 35 28.4998 35C25.4056 35 22.4382 33.7708 20.2503 31.5829C18.0623 29.395 16.8332 26.4275 16.8332 23.3333Z"
+                  fill="#806D38"
+                  fill-opacity="0.5"
+                />
+              </svg>
+              <h4 class="fw-bold fs-26 my-16">評論分享互動</h4>
+              <p class="fs-15">
+                分享對於某古裝劇的想法或心得，讓同好更快找到喜歡的劇，或是推坑新夥伴！
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- -----footer----- -->
+<footer
+  class="px-24 px-xl-80 px-xxl-160 pb-40 pt-64 pb-lg-64 border-top border-black-2"
+>
+  <div class="d-flex flex-column flex-xxl-row justify-content-between">
+    <!-- -----list----- -->
+    <div class="d-flex flex-column flex-lg-row mb-40 mb-lg-0">
+      <a href="index.html" class="me-32 mb-40 mb-lg-0">
+        <img src="/GuanZai/assets/logo-7c550b44.png" alt="觀哉GuanZai"
+      /></a>
+      <ul class="list-unstyled d-flex flex-column flex-lg-row text-start">
+        <li class="list px-lg-32 mb-12 my-lg-0">
+          <a href="#" class="link-secondary">所有作品</a>
+        </li>
+        <li class="list px-lg-32 my-12 my-lg-0 position-relative">
+          <a href="#" class="link-secondary">熱門排行</a>
+        </li>
+        <li class="list px-lg-32 my-12 my-lg-0">
+          <a href="#" class="link-secondary">平台推薦</a>
+        </li>
+        <li class="list px-lg-32 my-12 my-lg-0 position-relative">
+          <a href="#" class="link-secondary">關於我們</a>
+        </li>
+        <li class="list px-lg-32 mt-12 my-lg-0">
+          <a href="#" class="link-secondary">會員專區</a>
+        </li>
+      </ul>
+    </div>
+    <!-- -----social----- -->
+    <ul class="list-unstyled mb-48 mb-lg-64 text-center text-lg-end">
+      <li class="d-inline-block">
+        <a href="#" class="btn btn-square btn-social">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="32"
+            viewBox="0 0 33 32"
+            fill="none"
+          >
+            <path
+              d="M16.5 10C15.3133 10 14.1533 10.3519 13.1666 11.0112C12.1799 11.6705 11.4108 12.6075 10.9567 13.7039C10.5026 14.8003 10.3838 16.0067 10.6153 17.1705C10.8468 18.3344 11.4182 19.4035 12.2574 20.2426C13.0965 21.0818 14.1656 21.6532 15.3295 21.8847C16.4933 22.1162 17.6997 21.9974 18.7961 21.5433C19.8925 21.0892 20.8295 20.3201 21.4888 19.3334C22.1481 18.3467 22.5 17.1867 22.5 16C22.4983 14.4092 21.8657 12.884 20.7408 11.7592C19.616 10.6343 18.0908 10.0017 16.5 10ZM16.5 20C15.7089 20 14.9355 19.7654 14.2777 19.3259C13.6199 18.8864 13.1072 18.2616 12.8045 17.5307C12.5017 16.7998 12.4225 15.9956 12.5769 15.2196C12.7312 14.4437 13.1122 13.731 13.6716 13.1716C14.231 12.6122 14.9437 12.2312 15.7196 12.0769C16.4956 11.9225 17.2998 12.0017 18.0307 12.3045C18.7616 12.6072 19.3864 13.1199 19.8259 13.7777C20.2654 14.4355 20.5 15.2089 20.5 16C20.5 17.0609 20.0786 18.0783 19.3284 18.8284C18.5783 19.5786 17.5609 20 16.5 20ZM22.5 3H10.5C8.64409 3.00199 6.86477 3.74012 5.55245 5.05245C4.24012 6.36477 3.50199 8.14409 3.5 10V22C3.50199 23.8559 4.24012 25.6352 5.55245 26.9476C6.86477 28.2599 8.64409 28.998 10.5 29H22.5C24.3559 28.998 26.1352 28.2599 27.4476 26.9476C28.7599 25.6352 29.498 23.8559 29.5 22V10C29.498 8.14409 28.7599 6.36477 27.4476 5.05245C26.1352 3.74012 24.3559 3.00199 22.5 3ZM27.5 22C27.5 23.3261 26.9732 24.5979 26.0355 25.5355C25.0979 26.4732 23.8261 27 22.5 27H10.5C9.17392 27 7.90215 26.4732 6.96447 25.5355C6.02678 24.5979 5.5 23.3261 5.5 22V10C5.5 8.67392 6.02678 7.40215 6.96447 6.46447C7.90215 5.52678 9.17392 5 10.5 5H22.5C23.8261 5 25.0979 5.52678 26.0355 6.46447C26.9732 7.40215 27.5 8.67392 27.5 10V22ZM24.5 9.5C24.5 9.79667 24.412 10.0867 24.2472 10.3334C24.0824 10.58 23.8481 10.7723 23.574 10.8858C23.2999 10.9994 22.9983 11.0291 22.7074 10.9712C22.4164 10.9133 22.1491 10.7704 21.9393 10.5607C21.7296 10.3509 21.5867 10.0836 21.5288 9.79264C21.4709 9.50166 21.5007 9.20006 21.6142 8.92597C21.7277 8.65189 21.92 8.41762 22.1666 8.2528C22.4133 8.08797 22.7033 8 23 8C23.3978 8 23.7794 8.15804 24.0607 8.43934C24.342 8.72064 24.5 9.10218 24.5 9.5Z"
+              fill="white"
+            />
+          </svg>
+        </a>
+      </li>
+      <li class="d-inline-block mx-16">
+        <a href="#" class="btn btn-square btn-social d-inline-block">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="32"
+            viewBox="0 0 33 32"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M14.4842 5.05067C15.7967 3.73786 17.5771 3.00022 19.4335 3H23.0335C23.2987 3 23.5531 3.10536 23.7406 3.29289C23.9281 3.48043 24.0335 3.73478 24.0335 4V8.8C24.0335 9.06522 23.9281 9.31957 23.7406 9.50711C23.5531 9.69464 23.2987 9.8 23.0335 9.8H19.4335C19.4072 9.8 19.3812 9.80517 19.357 9.81522C19.3327 9.82528 19.3106 9.84001 19.2921 9.85858C19.2735 9.87715 19.2588 9.8992 19.2487 9.92346C19.2387 9.94773 19.2335 9.97374 19.2335 10V12.6H23.0335C23.1855 12.5999 23.3356 12.6345 23.4722 12.7011C23.6089 12.7677 23.7285 12.8646 23.8221 12.9844C23.9157 13.1042 23.9807 13.2438 24.0123 13.3925C24.0438 13.5412 24.0411 13.6952 24.0042 13.8427L22.8042 18.6427C22.75 18.8591 22.6251 19.0512 22.4492 19.1884C22.2733 19.3256 22.0566 19.4001 21.8335 19.4H19.2335V28C19.2335 28.2652 19.1281 28.5196 18.9406 28.7071C18.7531 28.8946 18.4987 29 18.2335 29H13.4335C13.1683 29 12.9139 28.8946 12.7264 28.7071C12.5389 28.5196 12.4335 28.2652 12.4335 28V19.4H9.8335C9.56828 19.4 9.31393 19.2946 9.12639 19.1071C8.93885 18.9196 8.8335 18.6652 8.8335 18.4V13.6C8.8335 13.4687 8.85936 13.3386 8.90962 13.2173C8.95987 13.096 9.03353 12.9858 9.12639 12.8929C9.21925 12.8 9.32949 12.7264 9.45081 12.6761C9.57214 12.6259 9.70217 12.6 9.8335 12.6H12.4335V10C12.4337 8.14357 13.1714 6.36325 14.4842 5.05067ZM19.4335 5C18.1074 5 16.8356 5.52678 15.898 6.46447C14.9603 7.40215 14.4335 8.67392 14.4335 10V13.6C14.4335 13.8652 14.3281 14.1196 14.1406 14.3071C13.9531 14.4946 13.6987 14.6 13.4335 14.6H10.8335V17.4H13.4335C13.6987 17.4 13.9531 17.5054 14.1406 17.6929C14.3281 17.8804 14.4335 18.1348 14.4335 18.4V27H17.2335V18.4C17.2335 18.1348 17.3389 17.8804 17.5264 17.6929C17.7139 17.5054 17.9683 17.4 18.2335 17.4H21.0522L21.7522 14.6H18.2335C17.9683 14.6 17.7139 14.4946 17.5264 14.3071C17.3389 14.1196 17.2335 13.8652 17.2335 13.6V10C17.2335 9.41652 17.4653 8.85695 17.8779 8.44437C18.2904 8.03179 18.85 7.8 19.4335 7.8H22.0335V5H19.4335Z"
+              fill="white"
+            />
+          </svg>
+        </a>
+      </li>
+      <li class="d-inline-block">
+        <a href="#" class="btn btn-square btn-social d-inline-block">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="33"
+            height="32"
+            viewBox="0 0 33 32"
+            fill="none"
+          >
+            <path
+              d="M27.9564 9.12621C27.9564 7.86602 26.9254 6.83496 25.6652 6.83496H7.3352C6.07501 6.83496 5.04395 7.86602 5.04395 9.12621V22.8737C5.04395 24.1339 6.07501 25.165 7.3352 25.165H25.6652C26.9254 25.165 27.9564 24.1339 27.9564 22.8737V9.12621ZM25.6652 9.12621L16.5002 14.8543L7.3352 9.12621H25.6652ZM25.6652 22.8737H7.3352V11.4175L16.5002 17.1456L25.6652 11.4175V22.8737Z"
+              fill="white"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <p class="text-center text-lg-end">
+    <span class="english fs-13 d-block d-xxl-inline mb-8 mb-lg-0"
+      >Copyright©2023 GuanZai All Rights Reserved</span
+    >
+    <span class="fs-12"> 此網站為個人切版作品，非商業使用</span>
+  </p>
+</footer>
+
+    
+    <!-- -----bootstrap----- -->
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- -----jquery----- -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- -----jquery-burger----- -->
+    <script>
+      $(document).ready(function () {
+        $(".burger").click(function (event) {
+          $(".burger img").toggleClass("d-none");
+        });
+      });
+    </script>
+    <!-- -----swiper----- -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- -----swiper-marquee----- -->
+    <!-- <script>
+      var swiper = new Swiper(".marquee", {
+        spaceBetween: 48,
+        allowTouchMove: false,
+        slidesPerView: "auto",
+        speed: 30000,
+        loop: true,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+      });
+    </script> -->
+    <script>
+      function initMarquee(swiper) {
+        var marquee =
+          swiper.slides[swiper.activeIndex].querySelector(".marquee");
+        if (marquee.swiper) {
+          marquee.swiper.destroy();
+        }
+
+        var swiper = new Swiper(marquee, {
+          spaceBetween: 48,
+          allowTouchMove: false,
+          slidesPerView: "auto",
+          speed: 30000,
+          loop: true,
+          autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+          },
+        });
+      }
+      var swiper2 = new Swiper(".banner-comment", {
+        spaceBetween: 16,
+        loop: true,
+        allowTouchMove: false,
+        slidesPerView: "auto",
+        navigation: {
+          nextEl: ".page-next",
+          prevEl: ".page-pre",
+        },
+        autoplay: {
+          delay: 8000,
+          disableOnInteraction: false,
+        },
+        on: {
+          init: function () {
+            initMarquee(this);
+          },
+          slideChangeTransitionEnd: function () {
+            initMarquee(this);
+          },
+        },
+      });
+    </script>
+    <!-- -----swiper-banner-comment----- -->
+    <script>
+      var swiper = new Swiper(".banner-comment", {
+        spaceBetween: 16,
+        loop: true,
+        allowTouchMove: false,
+        slidesPerView: "auto",
+        navigation: {
+          nextEl: ".page-next",
+          prevEl: ".page-pre",
+        },
+        autoplay: {
+          delay: 8000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+    <!-- -----swiper-banner----- -->
+    <script>
+      var swiper = new Swiper(".banner", {
+        slidesPerView: "auto",
+        waitForTransition: true,
+        // initialSlide: 4,
+        // slidesPerView: 8,
+        // spaceBetween: 16,
+        // centeredSlides: true,
+        loop: true,
+        observeParents: true,
+        // loopedSlides: 3,
+        // allowTouchMove: false,
+        spaceBetween: 20, // 間距
+        centeredSlides: true, // active 置中
+        // centeredSlidesBounds: true,
+        observer: true,
+        autoplay: {
+          delay: 3000,
+        },
+        // slidesPerView: 3, // 顯示數量
+        // loop: true,
+        // loopedSlides: 2, // 設定在循環滑動中顯示的幻燈片數量(左右的數量)
+        // navigation: {
+        //   nextEl: ".page-next",
+        //   prevEl: ".page-pre",
+        // },
+        // autoplay: {
+        //   delay: 8000,
+        //   disableOnInteraction: false,
+        // },
+      });
+      // swiper.updateSlidesClasses();
+      swiper.on("slideChange", function () {
+        console.log("slide changed");
+        // window.resizeTo(
+        //   window.screen.availWidth / 2,
+        //   window.screen.availHeight
+        // );
+        // window.resizeBy(-200, -200);
+        // swiper.init();
+      });
+    </script>
+  </body>
+</html>
