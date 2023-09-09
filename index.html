@@ -14,8 +14,8 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <script type="module" crossorigin src="/test0908/assets/main-339dc0ee.js"></script>
-    <link rel="stylesheet" href="/test0908/assets/main-f9db29ea.css">
+    <script type="module" crossorigin src="/test0908/assets/main-582ce9f8.js"></script>
+    <link rel="stylesheet" href="/test0908/assets/main-b1232404.css">
   </head>
   <body>
     <header
@@ -878,9 +878,12 @@
         on: {
           slideChangeTransitionEnd: function (e) {
             mySwiper.update(true);
+            // mySwiper.updateProgress();
+            // mySwiper.updateSlidesClasses();
+            // swiper.start();
+            mySwiper.autoplay.start();//更新補上重新自動輪播
           },
         },
-       
       });
     </script>
     <!-- -----swiper-banner----- -->
