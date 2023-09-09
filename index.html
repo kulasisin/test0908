@@ -14,8 +14,8 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <script type="module" crossorigin src="/test0908/assets/main-85b08fc2.js"></script>
-    <link rel="stylesheet" href="/test0908/assets/main-050bbdb4.css">
+    <script type="module" crossorigin src="/test0908/assets/main-339dc0ee.js"></script>
+    <link rel="stylesheet" href="/test0908/assets/main-f9db29ea.css">
   </head>
   <body>
     <header
@@ -465,39 +465,120 @@
       </div>
     </div>
     <!-- -----banner-swiper----- -->
-    <div class="banner-box">
+    <!-- <div class="banner-box">
       <div class="swiper banner">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="/test0908/assets/1-355b162e.png" alt="后宮甄嬛傳" />
+            <img src="../assets/images/1.png" alt="后宮甄嬛傳" />
           </div>
           <div class="swiper-slide">
-            <img src="/test0908/assets/長風渡-ca0e74de.png" alt="長風渡" />
+            <img src="../assets/images/長風渡.png" alt="長風渡" />
           </div>
           <div class="swiper-slide">
-            <img src="/test0908/assets/長月燼明2-e897e904.png" alt="長月燼明" />
+            <img src="../assets/images/長月燼明2.png" alt="長月燼明" />
           </div>
           <div class="swiper-slide">
-            <img src="/test0908/assets/后宮甄嬛傳2-555a4ac2.png" alt="后宮甄嬛傳" />
+            <img src="../assets/images/后宮甄嬛傳2.png" alt="后宮甄嬛傳" />
           </div>
           <div class="swiper-slide">
-            <img src="/test0908/assets/長月燼明-a1318d93.png" alt="長月燼明" />
+            <img src="../assets/images/長月燼明.png" alt="長月燼明" />
           </div>
           <div class="swiper-slide">
-            <img src="/test0908/assets/星漢燦爛-96dba728.png" alt="星漢燦爛" />
+            <img src="../assets/images/星漢燦爛.png" alt="星漢燦爛" />
           </div>
           <div class="swiper-slide">
-            <img src="/test0908/assets/瑯琊榜-a3d8d3f1.png" alt="瑯琊榜" />
+            <img src="../assets/images/瑯琊榜.png" alt="瑯琊榜" />
           </div>
           <div class="swiper-slide">
-            <img src="/test0908/assets/星漢燦爛-96dba728.png" alt="星漢燦爛" />
+            <img src="../assets/images/星漢燦爛.png" alt="星漢燦爛" />
           </div>
           <div class="swiper-slide">
-            <img src="/test0908/assets/瑯琊榜-a3d8d3f1.png" alt="瑯琊榜" />
+            <img src="../assets/images/瑯琊榜.png" alt="瑯琊榜" />
           </div>
+        </div>
+        
+      </div>
+    </div> -->
+    <div class="swiper mySwiper" id="mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="/test0908/assets/1-355b162e.png" alt="后宮甄嬛傳" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/test0908/assets/長風渡-ca0e74de.png" alt="長風渡" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/test0908/assets/長月燼明2-e897e904.png" alt="長月燼明" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/test0908/assets/后宮甄嬛傳2-555a4ac2.png" alt="后宮甄嬛傳" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/test0908/assets/長月燼明-a1318d93.png" alt="長月燼明" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/test0908/assets/星漢燦爛-96dba728.png" alt="星漢燦爛" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/test0908/assets/瑯琊榜-a3d8d3f1.png" alt="瑯琊榜" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/test0908/assets/星漢燦爛-96dba728.png" alt="星漢燦爛" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/test0908/assets/瑯琊榜-a3d8d3f1.png" alt="瑯琊榜" />
         </div>
       </div>
     </div>
+    <!-- <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 20, // 間距
+        centeredSlides: true, // active 置中
+        autoplay: {
+          delay: 1000,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        slidesPerView: 7, // 顯示數量
+        loop: true,
+        loopedSlides: 3, // 設定在循環滑動中顯示的幻燈片數量
+      });
+    </script> -->
+
+    <style>
+      .mySwiper {
+        height: 608px;
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        /* 輪播寬度 */
+        .swiper-slide,
+        .swiper-slide-next,
+        swiper-slide-prev {
+          width: 4% !important;
+        }
+
+        .swiper-slide-active {
+          width: 70% !important;
+          max-width: 1298px;
+        }
+      }
+    </style>
     <!-- -----about----- -->
     <div class="container pt-80 pt-lg-160 about">
       <div class="row gx-12">
@@ -779,64 +860,31 @@
     </script>
     <!-- -----swiper-banner-comment----- -->
     <script>
-      var swiper = new Swiper(".banner-comment", {
-        spaceBetween: 16,
-        loop: true,
-        allowTouchMove: false,
+      var mySwiper = new Swiper(".mySwiper", {
+        // loop: true,
+
+        centeredSlides: true,
         slidesPerView: "auto",
-        navigation: {
-          nextEl: ".page-next",
-          prevEl: ".page-pre",
-        },
+        spaceBetween: 20,
         autoplay: {
-          delay: 8000,
+          delay: 1000,
           disableOnInteraction: false,
         },
+        breakpoints: {
+          768: {
+            spaceBetweenSlides: 10,
+          },
+        },
+        on: {
+          slideChangeTransitionEnd: function (e) {
+            mySwiper.update(true);
+          },
+        },
+       
       });
     </script>
     <!-- -----swiper-banner----- -->
-    <script>
-      var swiper = new Swiper(".banner", {
-        slidesPerView: "auto",
-        waitForTransition: true,
-        // initialSlide: 4,
-        // slidesPerView: 8,
-        // spaceBetween: 16,
-        // centeredSlides: true,
-        loop: true,
-        observeParents: true,
-        // loopedSlides: 3,
-        // allowTouchMove: false,
-        spaceBetween: 20, // 間距
-        centeredSlides: true, // active 置中
-        // centeredSlidesBounds: true,
-        observer: true,
-        autoplay: {
-          delay: 3000,
-        },
-        // slidesPerView: 3, // 顯示數量
-        // loop: true,
-        // loopedSlides: 2, // 設定在循環滑動中顯示的幻燈片數量(左右的數量)
-        // navigation: {
-        //   nextEl: ".page-next",
-        //   prevEl: ".page-pre",
-        // },
-        // autoplay: {
-        //   delay: 8000,
-        //   disableOnInteraction: false,
-        // },
-      });
-      // swiper.updateSlidesClasses();
-      swiper.on("slideChange", function () {
-        console.log("slide changed");
-        // window.resizeTo(
-        //   window.screen.availWidth / 2,
-        //   window.screen.availHeight
-        // );
-        // window.resizeBy(-200, -200);
-        // swiper.init();
-      });
-    </script>
+
     <!-- <script type="module" src="../main.js"></script> -->
   </body>
 </html>
